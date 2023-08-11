@@ -15,5 +15,6 @@ provider "tfe" {
 
 data "tfe_oauth_client" "client" {
   organization     = var.tfc_org
-  service_provider = "github"
+  # service_provider = "github"
+  oauth_client_id = "oc-Am2mGhwFLLAKnt2a"
 }
