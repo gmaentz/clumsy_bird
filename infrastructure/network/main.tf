@@ -28,7 +28,10 @@ data "tfe_outputs" "workspaces" {
 
 locals {
   id   = data.tfe_outputs.workspaces["clumsy-bird-label-${var.environment}"].values.id
-  tags = data.tfe_outputs.workspaces["clumsy-bird-label-${var.environment}"].values.tags
+  # tags = data.tfe_outputs.workspaces["clumsy-bird-label-${var.environment}"].values.tags
+  tags = {
+    gabe = "was here"
+  }
 }
 
 module "vpc" {
