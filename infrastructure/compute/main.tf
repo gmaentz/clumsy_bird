@@ -41,7 +41,10 @@ data "tfe_workspace" "workspaces" {
 
 locals {
   id   = data.tfe_outputs.workspaces["clumsy-bird-label-${var.environment}"].values.id
-  tags = data.tfe_outputs.workspaces["clumsy-bird-label-${var.environment}"].values.tags
+  # tags = data.tfe_outputs.workspaces["clumsy-bird-label-${var.environment}"].values.tags
+  tags = {
+    Environment = "dev"
+  }
 }
 
 resource "aws_security_group" "clumsy_bird" {
